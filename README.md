@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shadcn React Wavesurfer
 
-## Getting Started
+A React component to render audio files using Wavesurfer.js, built with Shadcn-UI.
 
-First, run the development server:
+## Installation
+
+To install the component, use npm or yarn:
 
 ```bash
-npm run dev
+npm install shadcn-react-wavesurfer
 # or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+yarn add shadcn-react-wavesurfer
+```
+## Usage
+
+Here’s a basic example of how to use the component in your React application:
+
+```bash
+import React from 'react';
+import ShadcnReactWavesurfer from 'shadcn-react-wavesurfer';
+
+const App = () => {
+  return (
+    <div>
+      <h1>Audio Player</h1>
+      <ShadcnReactWavesurfer
+        audioUrl="path/to/your/audio/file.mp3"
+        waveColor="#ddd"
+        progressColor="#ff5500"
+      />
+    </div>
+  );
+};
+
+export default App;
+```
+## Props
+
+The ShadcnReactWavesurfer component accepts the following props:
+| Parameter      | Type    | Default    | Description                                      |
+|----------------|---------|------------|--------------------------------------------------|
+| `audioUrl`     | string  | null       | URL of the audio file to be played.              |
+| `waveColor`    | string  | #ddd       | Color of the waveform.                           |
+| `progressColor`| string  | #ff5500    | Color of the progress bar.                       |
+| `height`       | number  | 128        | Height of the waveform.                          |
+| `barWidth`     | number  | 2          | Width of the bars in the waveform.               |
+| `barGap`       | number  | 2          | Gap between the bars in the waveform.            |
+| `responsive`   | boolean | true       | Whether the waveform should be responsive.       |
+
+## Customization
+
+You can customize the appearance and behavior of the waveform by passing different props to the ShadcnReactWavesurfer component. For example:
+```bash
+<ShadcnReactWavesurfer
+  audioUrl="path/to/your/audio/file.mp3"
+  waveColor="#000"
+  progressColor="#00f"
+  height={200}
+  barWidth={3}
+  barGap={1}
+/>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Contributing
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Contributions are welcome! Please follow these steps to contribute:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+    Fork the repository.
+    Create a new branch (git checkout -b feature-branch).
+    Make your changes.
+    Commit your changes (git commit -m 'Add new feature').
+    Push to the branch (git push origin feature-branch).
+    Open a pull request.
+## License
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License. See the LICENSE file for details.
